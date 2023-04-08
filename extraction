@@ -1,0 +1,9 @@
+songs_df1 = songs_df1.head(10000)  
+  
+# Combine the columns for song titles and artists to create a new column.  
+songs_df1['songs'] = songs_df1['title'].map(str) + " - " + songs_df1['artist_name']  
+The column listen_count denotes the no of times the songs have been listened to. Using this column, we'll find the dataframe consisting of popular songs:   
+songs_gr = songs_df1.groupby(['songs']).agg({'listen_count': 'count'}).reset_index()  
+grouped_sum = songs_gr['listen_count'].sum()  
+songs_gr['percentage']  = songs_gr['listen_count'].div(grouped_sum)*100  
+songs_gr.sort_values(['listen_count', 'songs'], ascending = [0,1])  
