@@ -62,4 +62,4 @@ output = recommend(recommendations, m)
         cols = cols[-1:] + cols[:-1]  
         u1_recommendations = u1_recommendations[cols]  
           
-        return u1_recommendations  
+        return u1_recommendations 
