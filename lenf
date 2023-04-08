@@ -1,0 +1,1 @@
+print("Total no of songs:",len(songs_df1)) 
